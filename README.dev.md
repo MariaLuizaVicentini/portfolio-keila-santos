@@ -1,4 +1,4 @@
-# Como rodar este projeto fora do Lovable
+# Como rodar este projeto
 
 ## Requisitos
 - Node.js 20+ (instale via [nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
