@@ -100,14 +100,14 @@ Após iniciar a aplicação, acesse a URL exibida no terminal.
 O projeto está sendo desenvolvido de forma incremental.
 
 As principais etapas previstas são:
-
-1. Conhecer e documentar a implementação existente;
-2. Identificar pontos de acoplamento e código duplicado;
-3. Refatorar mantendo o comportamento existente;
-4. Criar testes para as funcionalidades importantes;
+1. Criar testes para as funcionalidades importantes;
+2. Conhecer e documentar a implementação existente;
+3. Identificar pontos de acoplamento e código duplicado;
+4. Refatorar mantendo o comportamento existente;
 5. Melhorar a organização e separação de responsabilidades;
 6. Revisar a estrutura pensando em escalabilidade;
-7. Preparar o projeto para publicação;
-8. Documentar as decisões e padrões adotados.
+7. Documentar as decisões e padrões adotados.
+8. Preparar o projeto para publicação;
+
 
 A prioridade é **evoluir a aplicação gradualmente**, evitando alterações desnecessárias e mantendo o projeto funcional durante o processo.
