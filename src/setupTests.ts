@@ -1,4 +1,5 @@
 import "@testing-library/jest-dom";
+import "@testing-library/jest-dom/vitest";
 import { vi } from "vitest";
 // Mock global para módulos que não funcionam no jsdom
 Object.defineProperty(window, "matchMedia", {
