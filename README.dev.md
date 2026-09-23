@@ -1,3 +1,12 @@
+## Referência
+
+Os estudos e exemplos deste projeto têm como base o artigo:
+
+>  **[Testes Unitários com Vitest e React: do Zero ao Pipeline de CI/CD](https://medium.com/@pf.souza15/testes-unit%C3%A1rios-com-vitest-e-react-do-zero-ao-pipeline-de-ci-cd-f1fe898a07cd)**  
+> *Por Paulo Souza*
+
+---
+
 ## Observações importantes
 - **Foto do Hero**: no projeto Lovable a foto é servida via `src/assets/keila-santos-hero.jpeg.asset.json` (hospedagem do Lovable). Fora do Lovable, troque o import em `src/components/portfolio.tsx` (constante `heroPhoto`) por uma importação direta do arquivo local `src/assets/keila-santos-hero.jpeg` (incluído nesta cópia), por exemplo:
   ```ts
