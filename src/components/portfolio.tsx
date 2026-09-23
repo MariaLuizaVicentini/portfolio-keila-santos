@@ -21,20 +21,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import {
-  capabilities,
-  certifications,
-  portfolioLinks,
-  projects,
-  type Certification,
-  type Project,
-} from "@/lib/portfolio-data";
-import performanceVisual from "../assets/keila-performance-abstract.jpg";
+import { capabilities, certifications, portfolioLinks, projects } from "@/lib/portfolio-data";
+import { Project, Certification } from "@/types/portfolio-data";
 import heroPhoto from "../assets/keila-santos-hero.jpeg";
-import psiquiatriaClinicaPhoto from "../assets/projects-clinica-psiquiatria.jpeg";
-import saudeClinicaPhoto from "../assets/projects-clinica-saude.jpeg";
-import setorEletricoPhoto from "../assets/projects-setor-eletrico.jpeg";
-import setorEngenhariaPhoto from "../assets/projects-setor-engenharia.jpeg";
 
 const navItems = [
   ["Sobre", "sobre"],
