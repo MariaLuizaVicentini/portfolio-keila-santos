@@ -30,7 +30,7 @@ import {
   type Project,
 } from "@/lib/portfolio-data";
 import performanceVisual from "@/assets/keila-performance-abstract.jpg";
-import heroPhoto from "@/assets/keila-santos-hero.jpeg.asset.json";
+import heroPhoto from "../assets/keila-santos-hero.jpeg";
 
 const navItems = [
   ["Sobre", "sobre"],
@@ -190,7 +190,7 @@ function HeroPhoto() {
       />
       <div className="relative aspect-[4/5] overflow-hidden rounded-[3px] border border-border/80 bg-card shadow-[var(--shadow-deep)]">
         <img
-          src={heroPhoto.url}
+          src={heroPhoto}
           alt="Retrato de Keila Santos"
           width={720}
           height={1280}
