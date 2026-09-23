@@ -66,3 +66,26 @@ src/
       useCounter.ts
       useCounter.test.t
 ```
+
+----
+
+#  Boas Práticas
+
+Princípio fundamental: 
+- teste comportamento, não implementação!!!
+- O maior erro ao testar componentes React é testar detalhes de implementação...
+- Isso quebra seus testes a cada refactor,mesmo quando o comportamento permanece correto..
+
+```ts
+// ❌ Ruim — testa implementação interna
+it('should set isLoading to true', () => {
+  const { result } = renderHook(() => useMyHook());
+  expect(result.current.isLoading).toBe(true);
+});
+  
+// ✅ Bom - testa o que o usuário enxerga
+it('should show a loading spinner while fetching', async () => {
+  render(<MyComponent />);
+  expect(screen.getByRole('progressbar')).toBeInTheDocument();
+});
+```

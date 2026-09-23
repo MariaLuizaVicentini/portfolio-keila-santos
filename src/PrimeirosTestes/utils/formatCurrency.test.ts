@@ -1,22 +1,22 @@
 import { formatCurrency } from "./formatCurrency";
 
-describe("formatCurrency", () => {
-  it("should format a positive number as BRL currency", () => {
+describe("formatCurrency (utils) - unit", () => {
+  it("deve formatar um número positivo como moeda BRL", () => {
     const result = formatCurrency(1500);
     expect(result).toBe("R$\u00a01.500,00");
   });
 
-  it("should format zero correctly", () => {
+  it("deve formatar o zero corretamente", () => {
     const result = formatCurrency(0);
     expect(result).toBe("R$\u00a00,00");
   });
 
-  it("should format negative values", () => {
+  it("deve formatar valores negativos", () => {
     const result = formatCurrency(-250.5);
     expect(result).toContain("250,50");
   });
 
-  it("should support other currencies", () => {
+  it("deve suportar outras moedas", () => {
     const result = formatCurrency(100, "en-US", "USD");
     expect(result).toBe("$100.00");
   });
