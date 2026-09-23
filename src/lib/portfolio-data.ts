@@ -1,4 +1,3 @@
-import performanceVisual from "../assets/keila-performance-abstract.jpg";
 import psiquiatriaClinicaPhoto from "../assets/projects-clinica-psiquiatria.jpeg";
 import saudeClinicaPhoto from "../assets/projects-clinica-saude.jpeg";
 import setorEletricoPhoto from "../assets/projects-setor-eletrico.jpeg";
