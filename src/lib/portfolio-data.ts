@@ -1,3 +1,10 @@
+import performanceVisual from "../assets/keila-performance-abstract.jpg";
+import heroPhoto from "../assets/keila-santos-hero.jpeg";
+import psiquiatriaClinicaPhoto from "../assets/projects-clinica-psiquiatria.jpeg";
+import saudeClinicaPhoto from "../assets/projects-clinica-saude.jpeg";
+import setorEletricoPhoto from "../assets/projects-setor-eletrico.jpeg";
+import setorEngenhariaPhoto from "../assets/projects-setor-engenharia.jpeg";
+
 export const portfolioLinks = {
   resume: null,
   certifications: null,
@@ -18,6 +25,7 @@ export type Project = {
   objective: string;
   strategy: string;
   metrics: string[];
+  image?: string; // Propriedade para a imagem do projeto
 };
 
 export const projects: Project[] = [
@@ -26,6 +34,7 @@ export const projects: Project[] = [
     name: "DOCTORDOR",
     segment: "Saúde",
     platforms: "Google Ads + Meta Ads",
+    image: saudeClinicaPhoto,
     description:
       "Clínica especializada em tratamentos para diferentes tipos de dor, com atuação em mídia paga para captação de novos pacientes.",
     work: [
@@ -47,6 +56,7 @@ export const projects: Project[] = [
     name: "ENERGYA TRANSFORMADORES",
     segment: "Industrial / B2B",
     platforms: "Google Ads + Meta Ads",
+    image: setorEletricoPhoto,
     description:
       "Empresa do setor elétrico com atuação na fabricação e comercialização de transformadores para aplicações industriais.",
     work: [
@@ -67,6 +77,7 @@ export const projects: Project[] = [
     name: "GRUPO MJ",
     segment: "Serviços / Engenharia",
     platforms: "Google Ads",
+    image: setorEngenhariaPhoto,
     description:
       "Empresa com diferentes soluções de engenharia, incluindo teste de estanqueidade, resina e individualização de água e gás.",
     solutions: ["Teste de Estanqueidade", "Resina", "Individualização de Água e Gás"],
@@ -89,6 +100,7 @@ export const projects: Project[] = [
     name: "OÁSIS SANTA CRUZ",
     segment: "Mercado imobiliário",
     platforms: "Meta Ads",
+    image: psiquiatriaClinicaPhoto, // Substitua pela imagem do Oásis se tiver uma específica
     description:
       "Empreendimento residencial com diferentes opções de plantas e configurações de apartamentos.",
     work: [

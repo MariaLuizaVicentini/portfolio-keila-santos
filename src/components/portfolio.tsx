@@ -29,8 +29,12 @@ import {
   type Certification,
   type Project,
 } from "@/lib/portfolio-data";
-import performanceVisual from "@/assets/keila-performance-abstract.jpg";
+import performanceVisual from "../assets/keila-performance-abstract.jpg";
 import heroPhoto from "../assets/keila-santos-hero.jpeg";
+import psiquiatriaClinicaPhoto from "../assets/projects-clinica-psiquiatria.jpeg";
+import saudeClinicaPhoto from "../assets/projects-clinica-saude.jpeg";
+import setorEletricoPhoto from "../assets/projects-setor-eletrico.jpeg";
+import setorEngenhariaPhoto from "../assets/projects-setor-engenharia.jpeg";
 
 const navItems = [
   ["Sobre", "sobre"],
@@ -210,8 +214,8 @@ function ProjectVisual({ project }: { project: Project }) {
   return (
     <div className="project-visual group relative aspect-[4/3] overflow-hidden rounded-[3px] border border-border bg-card shadow-[var(--shadow-card)]">
       <img
-        src={performanceVisual}
-        alt={`Espaço reservado para imagem do projeto ${project.name}`}
+        src={project.image}
+        alt={`Imagem do projeto ${project.name}`}
         loading="lazy"
         width={1600}
         height={1000}
@@ -219,7 +223,7 @@ function ProjectVisual({ project }: { project: Project }) {
       />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_35%,var(--background)_100%)] opacity-75" />
       <span className="absolute bottom-4 left-4 border border-border bg-background/75 px-2.5 py-1.5 font-mono text-[9px] tracking-[0.1em] text-muted-foreground backdrop-blur-sm">
-        IMAGEM DO CASE · ADICIONAR
+        {project.name}
       </span>
     </div>
   );
