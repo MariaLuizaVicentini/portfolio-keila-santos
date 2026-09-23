@@ -1,9 +1,9 @@
 import performanceVisual from "../assets/keila-performance-abstract.jpg";
-import heroPhoto from "../assets/keila-santos-hero.jpeg";
 import psiquiatriaClinicaPhoto from "../assets/projects-clinica-psiquiatria.jpeg";
 import saudeClinicaPhoto from "../assets/projects-clinica-saude.jpeg";
 import setorEletricoPhoto from "../assets/projects-setor-eletrico.jpeg";
 import setorEngenhariaPhoto from "../assets/projects-setor-engenharia.jpeg";
+import { Project, Certification } from "@/types/portfolio-data";
 
 export const portfolioLinks = {
   resume: null,
@@ -13,20 +13,6 @@ export const portfolioLinks = {
     "https://api.whatsapp.com/send/?phone=5511942440037&text&type=phone_number&app_absent=0",
   email: "mailto:keilasantoscampos7@gmail.com",
 } as const;
-
-export type Project = {
-  number: string;
-  name: string;
-  segment: string;
-  platforms: string;
-  description: string;
-  solutions?: string[];
-  work: string[];
-  objective: string;
-  strategy: string;
-  metrics: string[];
-  image?: string; // Propriedade para a imagem do projeto
-};
 
 export const projects: Project[] = [
   {
@@ -100,7 +86,7 @@ export const projects: Project[] = [
     name: "OÁSIS SANTA CRUZ",
     segment: "Mercado imobiliário",
     platforms: "Meta Ads",
-    image: psiquiatriaClinicaPhoto, // Substitua pela imagem do Oásis se tiver uma específica
+    image: psiquiatriaClinicaPhoto,
     description:
       "Empreendimento residencial com diferentes opções de plantas e configurações de apartamentos.",
     work: [
@@ -170,14 +156,6 @@ export const capabilities = [
     ],
   },
 ];
-
-export type Certification = {
-  issuer: string;
-  title: string;
-  year?: string;
-  duration?: string;
-  href: string | null;
-};
 
 export const certifications: Certification[] = [
   { issuer: "Google", title: "Fundamentos do Marketing Digital", href: null },
