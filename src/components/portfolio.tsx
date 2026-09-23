@@ -24,6 +24,7 @@ import {
 import { capabilities, certifications, portfolioLinks, projects } from "@/lib/portfolio-data";
 import { Project, Certification } from "@/types/portfolio-data";
 import heroPhoto from "../assets/keila-santos-hero.jpeg";
+import { EditableLink } from "./EditableLink";
 
 const navItems = [
   ["Sobre", "sobre"],
@@ -33,35 +34,6 @@ const navItems = [
   ["Stack", "stack"],
   ["Contato", "contato"],
 ] as const;
-
-function EditableLink({
-  href,
-  children,
-  className = "",
-}: {
-  href: string | null;
-  children: ReactNode;
-  className?: string;
-}) {
-  if (!href) {
-    return (
-      <span className={className} aria-disabled="true" title="Link será adicionado em breve">
-        {children}
-      </span>
-    );
-  }
-  const opensExternally = !href.startsWith("mailto:");
-  return (
-    <a
-      href={href}
-      className={className}
-      target={opensExternally ? "_blank" : undefined}
-      rel={opensExternally ? "noreferrer" : undefined}
-    >
-      {children}
-    </a>
-  );
-}
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
