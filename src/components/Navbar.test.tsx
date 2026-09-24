@@ -1,5 +1,4 @@
 import { render, screen, fireEvent, within } from "@testing-library/react";
-import { describe, test, expect, vi } from "vitest";
 
 import { Navbar } from "./Navbar";
 
