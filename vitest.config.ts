@@ -1,6 +1,14 @@
 import { defineConfig } from "vitest/config";
+import path from "path";
 
 export default defineConfig({
+  // Mapeia o alias @/ para a pasta src/
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+
   // Configura o ambiente e os recursos utilizados pelo Vitest.
   test: {
     // Permite usar describe, it, expect etc. sem importar manualmente.

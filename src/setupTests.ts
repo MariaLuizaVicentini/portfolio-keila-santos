@@ -1,6 +1,8 @@
 import "@testing-library/jest-dom";
 import "@testing-library/jest-dom/vitest";
+
 import { vi } from "vitest";
+
 // Mock global para módulos que não funcionam no jsdom
 Object.defineProperty(window, "matchMedia", {
   writable: true,
@@ -15,18 +17,21 @@ Object.defineProperty(window, "matchMedia", {
     dispatchEvent: vi.fn(),
   })),
 });
+
 // Mock do ResizeObserver (não existe no jsdom)
 global.ResizeObserver = vi.fn().mockImplementation(() => ({
   observe: vi.fn(),
   unobserve: vi.fn(),
   disconnect: vi.fn(),
 }));
+
 // Mock do IntersectionObserver
-global.IntersectionObserver = vi.fn().mockImplementation(() => ({
-  observe: vi.fn(),
-  unobserve: vi.fn(),
-  disconnect: vi.fn(),
-}));
+global.IntersectionObserver = vi.fn().mockImplementation(function () {
+  this.observe = vi.fn();
+  this.unobserve = vi.fn();
+  this.disconnect = vi.fn();
+});
+
 // Limpa todos os mocks após cada teste
 afterEach(() => {
   vi.clearAllMocks();
