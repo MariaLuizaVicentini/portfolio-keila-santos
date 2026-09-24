@@ -11,7 +11,7 @@ vi.mock("@/lib/portfolio-data", () => ({
   portfolioLinks: { resume: "#" },
 }));
 
-describe("Navbar", () => {
+describe("Navbar (componente) - unit", () => {
   test("deve renderizar o nome e os links da navegação principal", () => {
     render(<Navbar />);
 
