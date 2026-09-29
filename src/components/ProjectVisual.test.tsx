@@ -12,7 +12,12 @@ describe("ProjectVisual (componente) - unit", () => {
     expect(imgElement).toBeInTheDocument();
   });
 
-  test("deve renderizar nome do projeto", () => {});
+  test("deve renderizar nome do projeto", () => {
+    const { projectExample } = makeMocks();
+    render(<ProjectVisual project={projectExample}></ProjectVisual>);
+    const spanElementId = screen.getByTestId("project name");
+    expect(spanElementId).toHaveTextContent("DOCTORDOR");
+  });
 });
 
 const makeMocks = () => {
