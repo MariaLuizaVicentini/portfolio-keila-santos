@@ -1,17 +1,5 @@
 import { useEffect } from "react";
-import { ArrowUpRight, Bot, ChevronRight, Scissors, Table2, Menu, X } from "lucide-react";
-import {
-  siClaude,
-  siClickup,
-  siFigma,
-  siGoogleads,
-  siGoogleanalytics,
-  siGooglegemini,
-  siGoogletagmanager,
-  siMeta,
-  siYoutube,
-  type SimpleIcon,
-} from "simple-icons";
+import { ArrowUpRight, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -29,6 +17,8 @@ import { SectionTitle } from "./SectionTitle";
 import { HeroPhoto } from "./HeroPhoto";
 import { Footer } from "./Footer";
 import { CertificationCard } from "./CertificationCard";
+import { ToolCard } from "./ToolCard";
+import { stackGroups } from "@/lib/portfolio-data";
 
 function ProjectVisual({ project }: { project: Project }) {
   return (
@@ -138,111 +128,6 @@ const process = [
   ["ANALISAR", "Comportamento da campanha e oportunidades."],
   ["OTIMIZAR", "Ajustes baseados no que os dados mostram."],
 ] as const;
-
-const stackGroups = [
-  {
-    title: "MÍDIA PAGA",
-    description: "Frente principal",
-    tools: ["Google Ads", "Meta Ads", "YouTube Ads", "ChatGPT Ads"],
-    level: "primary",
-  },
-  {
-    title: "DADOS E MENSURAÇÃO",
-    description: "Suporte estratégico",
-    tools: ["Google Analytics 4", "Google Tag Manager", "Excel"],
-    level: "secondary",
-  },
-  {
-    title: "CRIAÇÃO E DESIGN",
-    description: "Ferramentas complementares",
-    tools: ["Figma", "Canva", "CapCut"],
-    level: "complementary",
-  },
-  {
-    title: "PLANEJAMENTO & GESTÃO",
-    description: "Conhecimentos complementares",
-    tools: ["ClickUp", "mLabs"],
-    level: "complementary",
-  },
-  {
-    title: "INTELIGÊNCIA ARTIFICIAL",
-    description: "Ferramentas de apoio",
-    tools: ["ChatGPT", "Claude", "Gemini"],
-    level: "complementary",
-  },
-] as const;
-
-const toolIcons: Partial<Record<(typeof stackGroups)[number]["tools"][number], SimpleIcon>> = {
-  "Google Ads": siGoogleads,
-  "Meta Ads": siMeta,
-  "YouTube Ads": siYoutube,
-  "Google Analytics 4": siGoogleanalytics,
-  "Google Tag Manager": siGoogletagmanager,
-  Figma: siFigma,
-  ClickUp: siClickup,
-  Claude: siClaude,
-  Gemini: siGooglegemini,
-};
-
-const toolBrandClasses: Partial<Record<(typeof stackGroups)[number]["tools"][number], string>> = {
-  "Google Ads": "brand-google-ads",
-  "Meta Ads": "brand-meta",
-  "YouTube Ads": "brand-youtube",
-  "Google Analytics 4": "brand-google-analytics",
-  "Google Tag Manager": "brand-google-tag-manager",
-  Excel: "brand-excel",
-  Figma: "brand-figma",
-  Canva: "brand-canva",
-  CapCut: "brand-capcut",
-  ClickUp: "brand-clickup",
-  mLabs: "brand-mlabs",
-  ChatGPT: "brand-chatgpt",
-  "ChatGPT Ads": "brand-chatgpt",
-  Claude: "brand-claude",
-  Gemini: "brand-gemini",
-};
-
-function BrandMark({ tool }: { tool: (typeof stackGroups)[number]["tools"][number] }) {
-  const icon = toolIcons[tool];
-  if (icon) {
-    return (
-      <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4 fill-current">
-        <path d={icon.path} />
-      </svg>
-    );
-  }
-  if (tool === "Excel") return <Table2 aria-hidden="true" className="h-4 w-4" />;
-  if (tool === "CapCut") return <Scissors aria-hidden="true" className="h-4 w-4" />;
-  if (tool === "ChatGPT" || tool === "ChatGPT Ads")
-    return <Bot aria-hidden="true" className="h-4 w-4" />;
-  return (
-    <span aria-hidden="true" className="font-display text-[10px] font-bold">
-      {tool === "mLabs" ? "mL" : "C"}
-    </span>
-  );
-}
-
-function ToolCard({
-  tool,
-  emphasized,
-}: {
-  tool: (typeof stackGroups)[number]["tools"][number];
-  emphasized: boolean;
-}) {
-  const brandClass = toolBrandClasses[tool] ?? "";
-  return (
-    <div
-      className={`group/tool flex min-h-11 items-center gap-2.5 rounded-[3px] border px-3 py-2.5 text-xs transition duration-300 hover:-translate-y-0.5 hover:border-accent/40 hover:shadow-[var(--shadow-tool-hover)] ${emphasized ? "border-accent/25 bg-secondary/50 text-foreground shadow-[var(--shadow-tool)]" : "border-border/75 bg-background/35 text-foreground/85 shadow-[var(--shadow-tool)]"}`}
-    >
-      <span
-        className={`brand-mark grid h-7 w-7 shrink-0 place-items-center rounded-[2px] border border-border/80 bg-card ${brandClass}`}
-      >
-        <BrandMark tool={tool} />
-      </span>
-      <span className="leading-4">{tool}</span>
-    </div>
-  );
-}
 
 export function PortfolioPage() {
   useEffect(() => {
