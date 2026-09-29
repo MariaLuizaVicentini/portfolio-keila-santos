@@ -190,3 +190,36 @@ export const certifications: Certification[] = [
     href: null,
   },
 ];
+
+export const stackGroups = [
+  {
+    title: "MÍDIA PAGA",
+    description: "Frente principal",
+    tools: ["Google Ads", "Meta Ads", "YouTube Ads", "ChatGPT Ads"],
+    level: "primary",
+  },
+  {
+    title: "DADOS E MENSURAÇÃO",
+    description: "Suporte estratégico",
+    tools: ["Google Analytics 4", "Google Tag Manager", "Excel"],
+    level: "secondary",
+  },
+  {
+    title: "CRIAÇÃO E DESIGN",
+    description: "Ferramentas complementares",
+    tools: ["Figma", "Canva", "CapCut"],
+    level: "complementary",
+  },
+  {
+    title: "PLANEJAMENTO & GESTÃO",
+    description: "Conhecimentos complementares",
+    tools: ["ClickUp", "mLabs"],
+    level: "complementary",
+  },
+  {
+    title: "INTELIGÊNCIA ARTIFICIAL",
+    description: "Ferramentas de apoio",
+    tools: ["ChatGPT", "Claude", "Gemini"],
+    level: "complementary",
+  },
+] as const;
