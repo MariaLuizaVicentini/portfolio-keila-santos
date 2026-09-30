@@ -223,3 +223,11 @@ export const stackGroups = [
     level: "complementary",
   },
 ] as const;
+
+export const process = [
+  ["ENTENDER", "Objetivo, negócio e público."],
+  ["ESTRUTURAR", "Campanhas, segmentações, palavras-chave e configurações."],
+  ["MENSURAR", "Eventos, conversões e indicadores."],
+  ["ANALISAR", "Comportamento da campanha e oportunidades."],
+  ["OTIMIZAR", "Ajustes baseados no que os dados mostram."],
+] as const;
